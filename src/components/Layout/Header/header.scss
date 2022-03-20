@@ -1,0 +1,9 @@
+#header {
+	box-shadow: var(--primary-shadow);
+	padding-block: var(--primary-spacing);
+	background-color: var(--primary-color);
+
+	& img {
+		margin-inline: auto;
+	}
+}

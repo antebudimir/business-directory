@@ -1,0 +1,41 @@
+#business-table {
+	width: 100%;
+}
+
+.table-heading {
+	color: var(--quinary-color);
+	text-transform: uppercase;
+	text-align: left;
+
+	&:first-of-type {
+		padding-inline: 2% 0;
+	}
+}
+
+.table-heading,
+.business-name,
+.business-description {
+	padding-block: var(--primary-spacing);
+	background-color: var(--primary-color);
+}
+
+.business-name {
+	width: 31.3%;
+	padding-inline: 2% 0;
+}
+
+.business-list {
+	display: block;
+	height: 90vh;
+	overflow: auto;
+}
+
+.business-row {
+	display: table;
+	width: 100%;
+}
+
+.business-link:hover td,
+.business-link:focus td {
+	background-color: transparent;
+}

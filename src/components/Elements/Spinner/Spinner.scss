@@ -1,0 +1,13 @@
+.spinner-wrapper {
+	@include flex-row-center;
+	height: 50vh;
+
+	@include respond-to-width(1024px) {
+		width: 35%;
+	}
+}
+
+.spinner {
+	width: 12rem;
+	height: auto;
+}

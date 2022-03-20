@@ -1,0 +1,14 @@
+// Footer
+#footer {
+	box-shadow: var(--primary-shadow);
+	padding-block: var(--primary-spacing);
+	background-color: var(--primary-color);
+	text-align: center;
+	// font-weight: 900;
+
+	& a {
+		color: var(--quinary-color);
+		font-size: 1.2rem;
+		line-height: 2;
+	}
+}
