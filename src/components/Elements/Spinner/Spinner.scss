@@ -1,13 +1,5 @@
-.spinner-wrapper {
-	@include flex-row-center;
-	height: 50vh;
-
-	@include respond-to-width(1024px) {
-		width: 35%;
-	}
-}
-
 .spinner {
-	width: 12rem;
+	width: var(--spinner-width);
 	height: auto;
+	margin: auto;
 }

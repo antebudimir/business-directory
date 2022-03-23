@@ -1,0 +1,15 @@
+.nearby {
+	flex: 5;
+	padding-inline: var(--secondary-spacing);
+	padding-block: var(--secondary-spacing);
+	background-color: var(--primary-color);
+
+	& tr {
+		color: var(--quaternary-color);
+	}
+}
+
+.nearby-heading {
+	margin-block: 0 var(--tertiary-spacing);
+	font-size: var(--secondary-font-size);
+}

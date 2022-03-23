@@ -1,0 +1,24 @@
+@font-face {
+	font-family: 'Roboto regular';
+	src: url('/fonts/Roboto-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Yantramanav';
+	font-family: 'Yantramanav Bold';
+	src: url('/fonts/Yantramanav-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+html {
+	font-family: 'Roboto regular';
+}
+
+.table-heading {
+	font-family: 'Yantramanav Bold';
+}

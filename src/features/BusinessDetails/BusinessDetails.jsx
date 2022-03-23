@@ -1,55 +1,68 @@
 import { Fragment } from 'react';
-import showcaseImage from 'assets/images/showcase.png';
+import { useParams } from 'react-router';
+import useFetch from 'hooks/useFetch';
 import Showcase from 'components/Layout/Showcase/Showcase';
-import InfoSection from 'components/Layout/InfoSection';
+import Spinner from 'components/Elements/Spinner/Spinner';
+import Message from 'components/Elements/Message/Message';
+import BusinessInfo from 'features/BusinessLayout/BusinessInfo/BusinessInfo';
 
-const BusinessDetails = (businessDetails) => {
-	const { image, description, name } = businessDetails;
+const BusinessDetails = () => {
+	const { isLoading, isError, data } = useFetch(
+			'directories',
+			'https://api.jsonbin.io/b/6231abada703bb67492d2b8f',
+		),
+		businesses = data ? data : [],
+		{ id } = useParams();
+
+	// data is undefined before fetching.
+	// Also, if a user refreshes the page, data becomes undefined again for a moment before being refetched.
+	// ternary operator checks counter those cases.
+	const business = businesses.find((business) => business.id === id),
+		{ image, phone, email } = business ? business : [],
+		{ number, street, city, country, zip } = business ? business.address : '';
+
+	const nearbyPlaces = businesses.filter(
+		(business) => business.address.city === city,
+	);
+
+	const backgroundImage = {
+		background: `url(${image}) no-repeat center center/cover`,
+		width: '100%',
+		height: '40vh', // magic matching the design layout that I was provided
+	};
 
 	return (
 		<Fragment>
-			<Showcase
-				headingClass="hidden-visually"
-				heading="Showcase image"
-				// imageClass="showcase-img"
-				imageSource={showcaseImage}
-				imageAlt="Company image"
-			/>
+			{isLoading && <Spinner />}
 
-			<section id="info">
-				<InfoSection
-					sectionClass="info-details"
-					headingClass="info-details-heading"
-					heading="Address"
-					// paragraphOne={}
-					// paragraphTwo={}
-					paragraphOne="123 Willow street"
-					paragraphTwo="Austin, TX 78456"
+			{isError && (
+				<Message
+					messageClass="info-message"
+					messageText="Something went wrong. Check your internet connection and try again."
 				/>
+			)}
 
-				<InfoSection
-					sectionClass="info-details"
-					headingClass="info-details-heading"
-					heading="Contact"
-					// paragraphOne={}
-					// paragraphTwo={}
-					paragraphOne="385996951148"
-					paragraphTwo="inbox@mail.com"
-				/>
+			{data && (
+				<Fragment>
+					<Showcase
+						showcaseId="business-image"
+						headingClass="hidden-visually"
+						heading="Showcase image"
+						styleBackground={backgroundImage}
+					/>
 
-				{/* <section className="nearby">
-					<h3 className="nearby-heading">Nearby Places</h3>
-
-					<div className="nearby-place">Cafe nesto</div>
-					<div className="nearby-place">restoran</div>
-					<div className="nearby-place">pumpa</div>
-					<div className="nearby-place">konder</div>
-				</section> */}
-
-				<section className="nearby">
-					<h3 className="nearby-heading">Nearby Places</h3>
-				</section>
-			</section>
+					<BusinessInfo
+						number={number}
+						street={street}
+						city={city}
+						country={country}
+						zip={zip}
+						phone={phone}
+						email={email}
+						nearbyPlaces={nearbyPlaces}
+					/>
+				</Fragment>
+			)}
 		</Fragment>
 	);
 };

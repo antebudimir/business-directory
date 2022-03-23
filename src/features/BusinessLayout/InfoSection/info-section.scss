@@ -1,0 +1,13 @@
+.info-details {
+	flex: 2;
+
+	& p {
+		color: var(--quaternary-color);
+	}
+}
+
+.info-details-heading {
+	margin-block: var(--quinary-spacing);
+	color: var(--tertiary-color);
+	font-size: var(--secondary-font-size);
+}

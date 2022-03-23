@@ -3,7 +3,7 @@ import { Outlet } from 'react-router';
 
 const Main = () => {
 	return (
-		<main id="directory">
+		<main id="directory" className="sticky">
 			<Outlet />
 		</main>
 	);

@@ -1,6 +1,4 @@
 #not-found {
-	flex: 1;
-	@include flex-column-center;
-	padding: 1rem;
+	padding: var(--primary-spacing);
 	text-align: center;
 }

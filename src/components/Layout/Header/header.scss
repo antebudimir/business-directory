@@ -3,7 +3,15 @@
 	padding-block: var(--primary-spacing);
 	background-color: var(--primary-color);
 
-	& img {
+	& a {
+		display: block;
+		width: fit-content;
 		margin-inline: auto;
+
+		&:hover,
+		&:focus {
+			transform: scale(var(--primary-scaling));
+			transition: transform var(--primary-time);
+		}
 	}
 }

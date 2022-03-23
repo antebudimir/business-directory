@@ -1,27 +1,18 @@
 import PropTypes from 'prop-types';
 
-const Showcase = ({
-	headingClass,
-	heading,
-	imageClass,
-	imageSource,
-	imageAlt,
-}) => {
+const Showcase = ({ showcaseId, styleBackground, headingClass, heading }) => {
 	return (
-		<section>
+		<section id={showcaseId} style={styleBackground}>
 			<h2 className={headingClass}>{heading}</h2>
-
-			<img className={imageClass} src={imageSource} alt={imageAlt} />
 		</section>
 	);
 };
 
 Showcase.propTypes = {
+	showcaseId: PropTypes.string,
+	styleBackground: PropTypes.object,
 	headingClass: PropTypes.string,
 	heading: PropTypes.string.isRequired,
-	imageClass: PropTypes.string,
-	imageSource: PropTypes.string.isRequired,
-	imageAlt: PropTypes.string.isRequired,
 };
 
 export default Showcase;

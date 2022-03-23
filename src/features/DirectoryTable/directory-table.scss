@@ -1,0 +1,65 @@
+#directory-table {
+	border-spacing: var(--primary-border-spacing);
+	width: 100%;
+}
+
+.business-row {
+	display: table;
+	width: 100%;
+	color: var(--tertiary-color);
+	cursor: pointer;
+
+	&:hover td,
+	&:focus td {
+		background-color: transparent;
+	}
+}
+
+.nearby .business-row {
+	& td {
+		background-color: var(--secondary-color);
+	}
+
+	&:hover td,
+	&:focus td {
+		background-color: transparent;
+	}
+}
+
+.table-heading {
+	color: var(--quinary-color);
+	font-size: var(--primary-font-size);
+	text-transform: uppercase;
+	text-align: left;
+}
+
+.table-heading,
+.business-name,
+.business-description {
+	padding-block: var(--primary-spacing);
+	background-color: var(--primary-color);
+}
+
+.table-heading:first-of-type {
+	width: var(--table-head-width);
+}
+
+.business-name {
+	width: var(--table-body-width);
+}
+
+.table-heading,
+.business-name,
+.business-description {
+	padding-inline: var(--secondary-spacing) 0;
+}
+
+.business-list,
+.nearby-business-list {
+	display: block;
+	overflow: auto;
+}
+
+.business-list:not(.nearby .business-list) {
+	height: var(--table-height);
+}
