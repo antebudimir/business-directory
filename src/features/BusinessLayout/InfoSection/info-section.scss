@@ -1,6 +1,14 @@
 .info-details {
 	flex: 2;
 
+	&.contact {
+		margin-inline: var(--primary-spacing);
+
+		@media screen and (max-width: 800px) {
+			margin-block: 0 var(--quinary-spacing);
+		}
+	}
+
 	& p {
 		color: var(--quaternary-color);
 	}

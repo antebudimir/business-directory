@@ -7,7 +7,6 @@
 	display: table;
 	width: 100%;
 	color: var(--tertiary-color);
-	cursor: pointer;
 
 	&:hover td,
 	&:focus td {
@@ -42,6 +41,10 @@
 
 .table-heading:first-of-type {
 	width: var(--table-head-width);
+}
+
+.business-list .business-row {
+	cursor: pointer;
 }
 
 .business-name {

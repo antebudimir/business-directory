@@ -22,6 +22,7 @@ const BusinessInfo = ({
 			/>
 
 			<InfoSection
+				sectionClass=" contact"
 				heading="Contact"
 				paragraphOne={phone}
 				paragraphTwo={email}
