@@ -1,4 +1,4 @@
-import './message.scss';
+import './Message.scss';
 import PropTypes from 'prop-types';
 
 const Message = ({ messageClass, messageText }) => {

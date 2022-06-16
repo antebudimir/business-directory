@@ -1,4 +1,4 @@
-import './spinner.scss';
+import './Spinner.scss';
 import spinner from './spinner.svg';
 
 const Spinner = () => {
